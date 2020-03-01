@@ -12,6 +12,7 @@ class Watcher{
             getVal会触发对象属性的get方法,从而往Dep中添加观察者（Watcher）
         */
         let oldVal = compileUtil.getVal(this.expr,this.vm);
+		// 添加完需要注销,方式重复挂载
         Dep.target = null;
         // console.log(Dep);
         return oldVal;
